@@ -104,7 +104,15 @@ class SubscriptionManager @Inject constructor(
 
     /** Проброс статуса из триального/подписочного колбэка Pay SDK. */
     suspend fun onTrialStarted(sku: Sku, trialEndsAt: Long) = persist(
-        SubscriptionState(SubStatus.TRIAL_ACTIVE, sku.id, trialEndsAt, null, System.currentTimeMillis(), "VERIFIED")
+        // Именованные аргументы: у SubscriptionState первый позиционный — id: Int,
+        // позиционная сборка путала порядок полей и не компилировалась.
+        SubscriptionState(
+            status = SubStatus.TRIAL_ACTIVE,
+            sku = sku.id,
+            expiresAt = trialEndsAt,
+            lastVerifiedAt = System.currentTimeMillis(),
+            source = "VERIFIED",
+        ),
     )
 }
 

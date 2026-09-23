@@ -48,7 +48,7 @@ private val tabs = listOf(
 @Composable
 fun KrugNavHost(startOnboarded: Boolean, navController: NavHostController = rememberNavController()) {
     val backStack by navController.currentBackStackEntryAsState()
-    val showBottomBar = tabs.any { tab -> backStack?.destination?.hierarchy?.any { it.route == tab.route } }
+    val showBottomBar = tabs.any { tab -> backStack?.destination?.hierarchy?.any { it.route == tab.route } == true }
 
     Scaffold(bottomBar = {
         if (showBottomBar) NavigationBar {

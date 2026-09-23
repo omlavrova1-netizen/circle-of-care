@@ -56,7 +56,7 @@ class OnboardingViewModel @Inject constructor(
                         recipientId = r.id,
                         recipientName = r.name,
                         recipientYearText = r.birthYear?.toString().orEmpty(),
-                        allergies = r.allergies.orEmpty(),
+                        allergies = r.allergiesText.orEmpty(),
                     )
                 }
             }
