@@ -11,10 +11,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout sources
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
 
       - name: Set up JDK 17
-        uses: actions/setup-java@v4
+        uses: actions/setup-java@v5
         with:
           distribution: temurin
           java-version: '17'
@@ -30,7 +30,21 @@ jobs:
           dependency-graph: disabled
 
       - name: Build debug APK
-        run: gradle :app:assembleDebug --stacktrace
+        run: |
+          set -o pipefail
+          gradle :app:assembleDebug --stacktrace 2>&1 | tee build-output.log
+
+      # Ошибки компиляции Gradle (строки "e: ..." / "error: ...") превращаем
+      # в GitHub-аннотации — их видно в UI и можно читать через публичный API.
+      - name: Surface compile errors as annotations
+        if: failure()
+        run: |
+          grep -E '^e: |error: ' build-output.log | head -10 | sed 's/^/::error::/' || true
+
+      - name: Surface failure reason
+        if: failure()
+        run: |
+          grep -A 8 -E 'What went wrong|FAILURE: Build failed' build-output.log | tr '\n' ' ' | cut -c1-600 | sed 's/^/::error::/' || true
 
       - name: Upload APK artifact
         uses: actions/upload-artifact@v4
