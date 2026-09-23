@@ -19,16 +19,15 @@ jobs:
           distribution: temurin
           java-version: '17'
 
-      - name: Set up Android SDK
-        uses: android-actions/setup-android@v3
-
+      # Android SDK на ubuntu-latest предустановлен (ANDROID_HOME + принятые
+      # лицензии), отдельный setup-android не нужен и на новых раннерах падает.
       # В репозитории нет gradlew (jar генерирует Android Studio), поэтому
       # ставим Gradle 8.9 прямо в CI и вызываем `gradle` напрямую.
       - name: Set up Gradle 8.9
         uses: gradle/actions/setup-gradle@v4
         with:
           gradle-version: '8.9'
-          dependency-graph: disable
+          dependency-graph: disabled
 
       - name: Build debug APK
         run: gradle :app:assembleDebug --stacktrace
