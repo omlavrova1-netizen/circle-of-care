@@ -1,0 +1,25 @@
+# Gradle
+.gradle/
+build/
+app/build/
+
+# IDE
+.idea/
+*.iml
+*.ipr
+*.iws
+.vscode/
+
+# Android SDK / local paths
+local.properties
+.cxx/
+.externalNativeBuild/
+captures/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Keystores — релизные ключи никогда не коммитим
+*.jks
+*.keystore

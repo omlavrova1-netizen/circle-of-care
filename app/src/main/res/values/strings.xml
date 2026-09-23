@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Круг заботы</string>
+
+    <string name="channel_reminders">Напоминания о приёме</string>
+    <string name="channel_reminders_desc">Вовремя напомнить о таблетках и визитах. Только ваши напоминания, без рекламы.</string>
+
+    <string name="notify_remind_title">%1$s %2$s</string>
+    <string name="notify_remind_text">Пора принять. Подтвердите одним касанием.</string>
+    <string name="notify_repeat_title">Не забудьте: %1$s</string>
+    <string name="notify_repeat_text">Приём ещё не подтверждён (напоминание %1$d из 3).</string>
+    <string name="notify_missed_title">Приём пропущен</string>
+    <string name="notify_missed_text">Отметьте в приложении: приняли или не принимали.</string>
+
+    <string name="btn_taken">Принято</string>
+    <string name="btn_not_taken">Не принимал</string>
+    <string name="btn_snooze_15">Отложить 15 минут</string>
+    <string name="btn_add_medication">Добавить лекарство</string>
+    <string name="btn_continue_free">Продолжить бесплатно</string>
+    <string name="btn_try_3_days">Попробовать 3 дня бесплатно</string>
+    <string name="btn_restore_purchase">Восстановить покупку</string>
+
+    <!-- Онбординг -->
+    <string name="onb_welcome_title">Лекарства, врачи и дневник близкого — в одном месте</string>
+    <string name="onb_welcome_subtitle">Дневник ухода для тех, кто заботится о пожилых родителях. Работает без интернета, данные остаются в телефоне.</string>
+    <string name="onb_start">Начать</string>
+    <string name="onb_recipient_title">Кому вы помогаете?</string>
+    <string name="onb_recipient_name">Имя</string>
+    <string name="onb_recipient_year">Год рождения (необязательно)</string>
+    <string name="onb_recipient_allergies">Аллергии (необязательно)</string>
+    <string name="onb_med_title">Добавим первое лекарство</string>
+    <string name="onb_med_subtitle">Я буду напоминать о приёме вовремя. Назначения врача не меняю — только напоминаю.</string>
+    <string name="onb_med_name">Название</string>
+    <string name="onb_med_dose">Доза, например 5 мг</string>
+    <string name="onb_med_time">Время приёма</string>
+    <string name="onb_done_title">Готово</string>
+    <string name="onb_done_text">Первое напоминание придёт вовремя. Остальные лекарства и визиты добавите позже.</string>
+    <string name="onb_permission_title">Напоминания нужны, чтобы близкий не пропустил таблетку</string>
+    <string name="onb_permission_text">Мы не рассылаем рекламу — только ваши напоминания о приёме и визитах.</string>
+
+    <string name="disclaimer_not_medical">Приложение не является медицинским изделием, не диагностирует и не назначает лечение. По вопросам здоровья и изменению схем приёма препаратов обращайтесь к врачу. Экстренные службы: 103, 112.</string>
+
+    <string name="paywall_med_limit_title">В бесплатной версии — 5 лекарств</string>
+    <string name="paywall_med_limit_text">Premium снимает лимит: ведите все препараты без ограничений, добавляйте расширенные отчёты и контроль остатков.</string>
+    <string name="paywall_footnote">Premium не влияет на напоминания — они работают и в бесплатной версии. Базовая карта к врачу тоже бесплатна.</string>
+</resources>
